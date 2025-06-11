@@ -157,12 +157,35 @@ pause
 
 ---
 
+## 🌐 Задание 3: Получение текущей погоды через API
+
+Скрипт подключается к [OpenWeatherMap API](https://openweathermap.org/current), получает данные о текущей погоде Алматы и сохраняет их.
+
+### 🔹 Используемый URL:
+
+```http
+http://api.openweathermap.org/data/2.5/weather?id=1526384&appid=API_KEY&units=metric&lang=ru
+```
+
+* `id=1526384` — ID города Алматы
+* `units=metric` — температура в °C
+* `lang=ru` — описание на русском
+
+### 🔹 Скрипт `weather_current.py`
+
+### 🔹 Что создаётся:
+
+* `weather_result.txt` — текстовая сводка погоды
+* `weather_log.txt` — лог действий и ошибок
+
+
 ## 📌 Зависимости
 
 * [Selenium](https://www.selenium.dev/)
 * [webdriver-manager](https://github.com/SergeyPirogov/webdriver_manager)
 * [PostgreSQL](https://www.postgresql.org/)
 * [psycopg2](https://www.psycopg.org/)
+* [Openweathermap API Documentation](https://openweathermap.org/api/one-call-api#data)
 
 ---
 
