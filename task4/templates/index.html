@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Инциденты</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h2>Создать инцидент</h2>
+    <form id="createForm">
+        <input name="title" placeholder="Заголовок" required><br>
+        <textarea name="description" placeholder="Описание"></textarea><br>
+        <button type="submit">Создать</button>
+    </form>
+
+    <h2>Список инцидентов</h2>
+    <ul id="incidentList">
+        {% for i in incidents %}
+        <li data-id="{{ i.id }}">
+            <strong>{{ i.title }}</strong> — {{ i.status }}
+            {% if i.status != 'resolved' %}
+            <button class="resolveBtn">Решено</button>
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
